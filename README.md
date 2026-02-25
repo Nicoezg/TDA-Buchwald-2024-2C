@@ -1,4 +1,4 @@
-# TDA - Técnicas de Diseño de Algoritmos
+# TDA - Teoría de Algoritmos
 ### Cátedra Buchwald — 2024 (2° Cuatrimestre)
 
 Repositorio académico con implementaciones y ejercicios resueltos de la materia **Teoría y Diseño de Algoritmos** de la carrera de Ingeniería en Informática (FIUBA). Cubre las principales técnicas de diseño de algoritmos con implementaciones en **Python**.
