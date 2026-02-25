@@ -1,0 +1,25 @@
+(Ver video para entender mejor)
+El problema de decisión de 3-SAT dice: dadas un número de cláusulas de variables booleanas, 
+cada cláusula consta de la operación OR entre 3 términos, decidir si existe una configuración de las 
+variables booleanas tal que sea posible cumplir todas las cláusulas. El problema de 3-SAT es NP-Completo. 
+Dados los problemas de decisión de Independent Set y 3-SAT, demostrar que Independent Set es NP-Completo. 
+Luego explicar de qué manera, con el trabajo hecho en la guía hasta este ejercicio, se puede afirmar que Vertex 
+Cover es NP-Completo.
+
+Para demostrar que IS es NP-Completo, es necesario desmotrar que existe en NP y luego reducir un problema de NP completo
+a este.
+
+1. I.S. existe en NP, ya que podemos implementar un verificador en tiempo polinomial.
+2. 3-SAT <=p I.S.
+
+I. Ponemos nodos = términos (3k nodos) de cada cláusula.
+II. Creamos triángulos por cada cláusula. 
+III. Ponemos aristas en posibles conflictos (variables opuestas)
+IV. Se puede demostrar que G tiene un set independiente de tamaño k sii el 3-SAT es satisfacible.
+
+Demostramos ese sii
+Si Hay 3-SAT, hay Independent Set: 
+Si es satisfacible, al menos 1 nodo de cada triángulo es True/1. Agarramos un vértice de cada triángulo tal que valga True/1 → Ese set es independiente (no puede generar conflictos)
+
+Si hay Independent Set, hay 3-SAT:
+Por cada xi, si está en el set, va 1, si está el complemento va el 0, si no hay ninguno, ponemos alguno en 0 y otro en 1 (no pueden estar ambos). Como hay es un independent set de tamaño k → necesariamente hay al menos un 1 por cada triángulo → se cumple 3-SAT. 

@@ -1,0 +1,19 @@
+Reducir Independent Set a Vertex Cover.
+
+Momento teorema: S es un set independiente de G sii V - S es vertex cover de G. 
+
+Demostración: Si tengo un IS S, si agarro una arista cualquiera (v, w), 
+necesariamente al menos uno de ellos tiene que estar en V-S porque no 
+pueden estar ambos en S (por ser IS) → pasa para todas las aristas → V-S es VC
+
+Suponemos un VC (V-S), y agarramos un par de vértices cualesquiera en S. 
+Supongo que están unidos por una arista, pero entonces habría una arista 
+no cubierta por V-S → mi suposición genera el absurdo. 
+
+Reducimos usando teorema
+
+Reducimos: IS <= VC → Si tenemos una caja negra que resuelve si un Grafo tiene un VC de tamaño k, para ver si tiene un IS de tamaño X, le consultamos a la caja negra si el mismo grafo tiene un VC de tamaño k = n - X. 
+
+Hacemos similar al revés. 
+
+Como IS ≤p VC y VC ≤p IS, son igual de difíciles. 

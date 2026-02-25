@@ -1,0 +1,28 @@
+Definir los problemas de decisión de Camino Hamiltoniano y Ciclo Hamiltoniano. 
+Sabiendo que Ciclo Hamiltoniano es NP-Completo, demostrar que Camino Hamiltoniano es NP-Completo.
+
+Problema de decision de Camino Hamiltoniano: Decidir si existe un camino hamiltoniano en el grafo (pasar por todos
+los vertices una vez)
+
+Problema de decision de Ciclo Hamiltoniano: Decidir si existe un ciclo hamiltoniano en el grafo (pasar por todos los vertices
+y tener la posibilidad de volver al original, completando el ciclo)
+
+Para demostar que Camino Hamiltoniano es NP-Completo:
+I. Demostrar que Camino Hamiltoniano esta en NP
+II. Ciclo Hamiltoniano <= p Camino Hamiltoniano
+
+I. Para demostrar que Camino Hamiltoniano esta en NP, es necesario poder verificar si efectivamente un posible hamiltoniano cumple en tiempo polinomial.
+
+Dado un posible camino hamiltoniano y un grafo, habría que verificar:
+1) El largo del camino tiene que ser igual al del grafo O(1)
+2) Recorrer todo el camino fijandose si hay arista entre posible_sol[i - 1] y posible_sol[i] O(N)
+3) Verificar que todos los vertices del camino esten en el grafo O(N)
+4) Verificar que los vertices sean distintos entre si O(N)
+
+II. Reducimos ciclo hamiltoniano a Camino Hamiltoniano
+
+Agarramos un vértice al azar y lo reemplazamos por v' y v''. Todas las aristas salientes de v ahora salen de v', todas las entrantes entran a v''. 
+
+Existe Ciclo Hamiltoniano en el original sii existe Camino Hamiltoniano en el nuevo (ese camino necesariamente empieza en v' y termina en v''). 
+
+![alt text](image-2.png)

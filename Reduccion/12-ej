@@ -1,0 +1,6 @@
+¿Pertenece el siguiente problema a PSPACE? Dada una lista de enteros positivos 
+L y un entero n obtener un subconjunto de L que sume exactamente n, o, en caso de no existir, 
+que devuelva el subconjunto de suma máxima sin superar el valor de n.
+
+No pertenece a PSPACE porque a lo sumo estaremos guardando los n elementos en memoria. Al no tener que devolver todos los
+subconjuntos y tener que devolver solo uno, ahorramos el uso de memoria.

@@ -1,0 +1,32 @@
+def karatsuba_offman(a, b, n):
+    if n <= 1:
+        return a*b
+    
+    medio = n // 2
+    m = 2**medio - 1
+    a1 = a >> medio
+    a0 = a & m
+    b1 = b >> medio
+    b0 = b & m
+
+    p = karatsuba_offman(a1+a0, b1+b0, medio)
+    a0b0 = karatsuba_offman(a0, b0, medio)
+    a1b1 = karatsuba_offman(a1, b1, medio)
+
+    return a1b1 * 2**(2*medio) + (p - a1b1 - a0b0) * 2**medio + a0b0
+
+def multiplicar(a, b):
+    n = max(a.bit_length(), b.bit_length())
+    return karatsuba_offman(a, b, n)
+"""
+Complejidad por Teorema Maestro:
+
+n: cantidad de bits
+Ecuación de recurrencia: T(n) = 3T(n/2) + O(n)
+
+a = 3
+b = 2
+c = 1
+
+log_2(3) ~ 1.59 > c ---> T(n) = O(n^1.59)
+"""

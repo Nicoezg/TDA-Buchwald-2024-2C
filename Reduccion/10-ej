@@ -1,0 +1,28 @@
+Problema de decision de Subset Sum: Para un arreglo de n elementos, existe
+un conjunto de elementos tal que la suma de ellos sea == k?
+
+Problema de decision de la mochila: Se tiene una mochila con una capacidad W
+la cual podemos llenar con elementos que tienen un valor y un peso. existe
+un conjunto de elementos tal que la suma de sus pesos <= W y la suma de sus valores sea >= V?
+
+Demostrar que el problema de la mochila es NP-Completo sabiendo que subset-sum es NP-Completo
+
+Para que el problema de la mochila sea NP-Completo, es necesario:
+I. Que el problema de la Mochila este en NP.
+Para ello, es necesario que se pueda idear un verificador en tiempo polinomial.
+
+Este verificador podría iterar el conjunto solución de los elementos en forma (valor, peso).
+Deberá verificar que todos los elementos efectivamente existan realmente en el problema O(E) siendo e los elementos.
+Deberá verificar que la suma de los elementos sea al menos >= V O(E)
+Deberá verificar que la suma de los pesos de los elementos no exceda W O(E)
+
+Por lo tanto, el verificador es de orden polinomial y el problema se encuentra en NP.
+
+II. Reducir subsetsum al problema de la mochila
+Subset-Sum <=p Backpack
+
+Para esto es necesario transformar nuestro problema original. En SS, tenemos elementos y debemos sumar con algun conjunto exactamente T. En cambio, en el problema de la mochila, nuestros elementos tienen un valor y un peso, y no deben exceder cierto peso W. Por lo tanto, pensaremos el valor deseado T como el peso limitante y el valor deseado a alcanzar en el problema de la mochila. Nuestros elementos del subsetsum, serán tuplas (numero , numero) siendo numero el valor correspondiente en el subsetsum. De esta manera, nos aseguramos que la sumatoria del valor acumulado sea al menos V y la sumatoria del peso acumulado sea menor o igual a W. Si V y W == T  y valor acumulado = peso acumulado ---->
+valor acumulado >= V ------> valor acumulado >= T
+peso acumulado <= W ------> valor acumulado <= T  ------> valor acumulado == T.
+
+De esta manera, nos aseguraremos de encontrar la solución que sume exactamente T (si es que la hay).

@@ -1,0 +1,19 @@
+Realizar una reducción polinomial del siguiente problema a otro de los vistos durante la cursada. 
+Ayuda: pensar en alguno de los vistos de programación dinámica. Dada esta reducción, 
+¿se puede afirmar que este problema es NP-Completo?
+
+Dado un número n, encontrar la cantidad más económica (con menos términos) de escribirlo como una suma de cuadrados.
+
+Para reducir es necesario transformar estos problemas a problemas de decisión:
+
+Problema planteado: Dado un numero n, es posible escribirlo como una suma de a lo sumo k cuadrados?
+
+Problema del cambio: Dado un monto M, es posible dear cambio con a lo sumo k billetes?
+
+problema <= problema del cambio
+
+Para realizar esta reducción, es necesario transformar el problema. En el problema del cambio, teniamos las monedas disponibles para dar el cambio y un monto M. Se buscaba dar el cambio en la menor cantidad de billetes posibles. En el problema planteado, los billetes de cambio serían todos los cuadrados posibles desde 1 hasta N. De esta manera, descompondremos el número N en sumas de cuadrados.
+
+La reduccion es polinomial en tiempo, ya que la construccion del conjunto de monedas y la resolucion del problemas se realizan en tiempo polinomial.
+
+Para afirmar que este problema está en NP completo, deberíamos demostrar/saber que el problema del cambio esta en Np completo. Luego, tambien sería necesario tener un verificador del problema de orden polinomial.

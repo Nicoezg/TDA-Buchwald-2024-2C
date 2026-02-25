@@ -1,0 +1,5 @@
+¿Pertenece el siguiente problema a PSPACE? Dada una lista de enteros positivos 
+L y un entero n obtener todos los subconjuntos de L que suman exactamente n.
+
+Si, pertenece al PSPACE. Un ejemplo sencillo para ver es un subconjunto de todos ceros que tienen que sumar 0.
+En ese caso, cada combinación posible de los elementos es solucion al problema.

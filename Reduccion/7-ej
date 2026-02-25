@@ -1,0 +1,28 @@
+Definir los problemas de decisión de Independent Set y K-Clique. Hacer una reducción de Independet Set a K-Clique. 
+Dada esta reducción, ¿podemos afirmar que K-Clique es un problema NP-Completo?
+
+Problema de decision de I.S: Existe un set de tamaño (al menos) K donde los nodos pertenecientes
+a este set no pueden ser adyacentes entre si.
+
+Problema de decision de K-Clique: Existe un set de tamaño (al menos) K donde los nodos pertenecientes a dicho set
+son todos adyacentes entre si.
+
+Reduccion de I.S a K Clique:
+
+I.S <=p K Clique
+
+1. Obtenemos el grafo complemento -> Aristas que no están en G (grafo original).
+2. Definimos que hay un Independent Set de al menos K vértices sii hay un clique de al menos K vértices en el grafo complemento.
+
+![alt text](image-1.png)
+
+Supongamos que tengo un grafo completo G
+
+El I.S de dicho grafo va a ser de 1 vértice. El complemento de dicho grafo es un grafo sin aristas. Por ende el clique es de 1 también (no hay ningun vertice adyacente).
+
+Si se sacara una arista de este grafo completo, el I.S pasaría a hacer de 2 vértices y en el grafo complemento tendríamos una arista. Esto quiere decir que en el grafo complemento también tenemos un 2-clique formado entre los únicos dos vértices que no son adyacentes en el grafo original.
+
+Supongamos por un momento que en un grafo sin aristas tengo al menos un 2 clique. Esto implicaría que en el grafo complemento (grafo completo), donde todos los vértices estan unidos tengo al menos dos vértices los cuales no son adyacentes entre sí. Absurdo.
+
+No se puede decir que K-Clique es un problema NP-Completo porque para ello necesitariamos reducir K-Clique a I.S, cosa que no hicimos.
+

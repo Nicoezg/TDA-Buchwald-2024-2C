@@ -1,0 +1,28 @@
+Definir el problema de decisión de las N-Reinas. Usar que N-Reinas es un problema NP-Completo para 
+demostrar que Demostrar que Independent Set es un problema NP-Completo.
+
+El problema de decision de las N-Reinas es decidir si es posible colocar al menos N-Reinas en un tablero de NxN.
+
+Para demostrar que Independent Set es un problema NP-Completo, es necesario:
+
+I. I.S tiene que existir en NP (verificador de orden polinomial)
+II. N Reinas <= I.S.
+
+I. Implementamos el verificador previamente, el cual es polinimial -> I.S. E en NP
+
+II. Si hay N-Reinas de almenos N -> hay I.S. de al menos N 
+
+Si pensamos el tablero de ajedrez de NxN como un grafo, donde cada celda es un nodo y las aristas conectan con otros nodos donde podemos realizar movimientos, tenemos un problema muy similar a independent set.
+
+Al colocar una reina en un casillero en especifico, no podemos colocar ninguna reina en los casilleros hacia donde se puede dirigir. Si los casilleros donde se puede poner una reina son nodos conectados por aristas a otros casilleros a los que puede realizar movimientos, si elijo poner una reina en ese casillero, no puedo poner en ninguno de los adyacentes a ese casillero. 
+
+Por ende, si tengo al menos N-Reinas -> Tengo I.S de al menos N.
+
+Similar a lo previo, si tengo el tablero modelado como un grafo y dentro del mismo tengo un I.S. de al menos N -> Tengo N-Reinas de almenos N.
+
+Entonces, habiendo cumplido ambas condiciones, se puede afirmar que I.S esta en NP-Completo.
+
+
+
+
+

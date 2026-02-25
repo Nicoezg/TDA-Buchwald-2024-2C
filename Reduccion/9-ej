@@ -1,0 +1,16 @@
+Definir los problemas de decisión de Grafo Bipartito y 3-Coloreo. Sabiendo que 3-Coloreo es NP-Completo, 
+reducir Grafo Bipartito a 3-Coloreo. ¿Podemos afirmar que Grafo Bipartito es un problema NP-Completo?
+
+Problema de decision de grafo bipartito: Dado un grafo, decidir si es bipartito o no.
+Problema de decision de 3-coloreo: Dado un grafo, decidir si es posible colorear con 3 colores.
+
+Reducir Grafo Bipartito a 3-Coloreo
+
+Grafo Bipartito <= 3-Coloreo
+
+Modifico el grafo original, agregando un vértice que se conecte con todos. Ese vértice ocupará uno de los 3 colores y obligará al resto a elegir entre los otros dos restantes. Por ende, si usamos 3-Coloreo para este grafo modificado, devolverá si es posible pintar de 2-Colores el grafo restante, es decir, si es bipartito.
+
+Teniendo el grafo modificado con 3-Coloreo, si pinto de azul y rojo todos los vértices que no sea el que agregué extra y hay solución de 3-Coloreo, entonces el grafo es bipartito
+
+![alt text](image-3.png)
+
